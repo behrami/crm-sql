@@ -1,10 +1,10 @@
-gem 'activerecord', '=4.2.7'
+gem 'activerecord', '=4.2.10'
 require 'active_record'
 require 'mini_record'
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'crm.sqlite3')
 
-class Contact<ActiveRecord
+class Contact<ActiveRecord::Base
 
   field :first_name, as: :string
   field :last_name,  as: :string
