@@ -32,9 +32,6 @@ class CRM
     when 4 then display_all_contacts
     when 5 then search_by_attribute
     when 6 then exit
-    # Finish off the rest for 3 through 6
-    # To be clear, the methods add_new_contact and modify_existing_contact
-    # haven't been implemented yet
     end
   end
 
@@ -73,7 +70,7 @@ class CRM
     value = gets.chomp
 
     find = Contact.find(id)
-    find.update(attribute, value)
+    find.update(attribute => value)
 
   end
 
@@ -100,8 +97,8 @@ class CRM
     puts "what #{attribute} of the contact are you searching for?"
     value = gets.chomp
 
-    a = Contact.find_by(attribute, value)
-    puts "#{a.id} #{a.first_name} #{a.last_name} #{a.email}"
+    a = Contact.find_by(attribute => value)
+    puts "#{a.id} #{a.first_name} #{a.last_name} #{a.email} #{a.note}"
   end
 
 
